@@ -1,0 +1,28 @@
+<app-search-customer></app-search-customer>
+<h2>Mes clients</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Email</th>
+      <th>Factures</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of customers">
+      <td>{{ c.fullName }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.invoices.length }}</td>
+      <td>
+        <a routerLink="/customers/{{ c.id }}" class="btn btn-primary btn-sm"
+          >modifier</a
+        >
+        <button class="btn btn-danger btn-sm ml-1" (click)="handleDelete(c)">
+          Supprimer
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<app-pagination *ngIf="pagesCount > 1" [pagesCount]="5" [currentPage]="1" (onPageChange)="refreshCustomers($event)"></app-pagination>

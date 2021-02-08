@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>AngularCrm</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>
+
+
+<!-- <script>
+  const timer = {
+    reactions: {
+      init:[],
+      timeout:[]
+    },
+
+    addEventListener(catergory, fn) {
+      this.reactions[category].push(fn);
+    },
+
+    react(category) {
+      this.reactions[category].forEach(fn => {
+        fn()
+      });
+    },
+
+    init() {
+
+      this.reactions.init.forEach(fn => {
+        fn();
+      })
+
+      window.setTimeout(() => {
+        this.reactions.timeout.forEach(fn => {
+          fn()
+        });
+      }, 2000);
+    }
+  }
+
+  timer.addEventListener('init', function() {
+  console.log('ça commence !');
+});
+
+  timer.addEventListener('timeout', function() {
+  console.log('ça commence encore!');
+});
+
+  timer.addEventListener( 'timeout' ,function() {
+    console.log("toto");
+  });
+
+  timer.init();
+</script> -->
+
+<!-- <script>
+  const dispatcher = {
+    reactions: {},
+
+    addListener(event, fn) {
+      if (!this.reactions[event]) {
+        this.reactions[event] = [];
+      }
+      this.reactions[event].push(fn);
+    },
+    dispatch(event) {
+      this.reactions[event].forEach((fn) => fn())
+    }
+  }
+
+  const timer = {
+    init() {
+      window.setTimeout(() => dispatcher.dispatch('timeout')
+      ,2000);
+    }
+  }
+
+  dispatcher.addListener('timeout', function() {
+    console.log('salut');
+  })
+
+  timer.init();
+
+</script> -->

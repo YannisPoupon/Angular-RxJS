@@ -1,0 +1,23 @@
+<div>
+  <ul class="pagination">
+    <li
+      class="page-item disabled previous"
+      [ngClass]="{ disabled: currentPage === 1 }"
+    >
+      <a class="page-link" (click)="previousPage()" href="#">&laquo;</a>
+    </li>
+    <li
+      class="page-item"
+      [ngClass]="{ active: page === currentPage }"
+      *ngFor="let page of getPages()"
+    >
+      <a class="page-link" (click)="changePage(page)">{{ page }}</a>
+    </li>
+    <li
+      class="page-item next"
+      [ngClass]="{ disabled: currentPage === pagesCount }"
+    >
+      <a class="page-link" (click)="nextPage()" href="#">&raquo;</a>
+    </li>
+  </ul>
+</div>

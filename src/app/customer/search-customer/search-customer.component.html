@@ -1,0 +1,6 @@
+<input type="texte" [formControl]="searchInput" placeholder="Recherche" class="form-control">
+<div class="alert-light" *ngIf="resultats.length > 0">
+  <p *ngFor="let c of resultats">
+    <a routerLink="/customers/{{c.id}}" [innerHTML]="c | searchResult: searchInput.value"></a>
+  </p>
+</div>
